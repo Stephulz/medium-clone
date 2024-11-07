@@ -9,8 +9,8 @@ const initialState: FeedStateInterface = {
   data: null,
 };
 
-const authFeature = createFeature({
-  name: 'auth',
+const feedFeature = createFeature({
+  name: 'feed',
   reducer: createReducer(
     initialState,
     on(feedActions.getFeed, (state) => ({
@@ -27,10 +27,7 @@ const authFeature = createFeature({
       ...state,
       isLoading: false,
     })),
-    on(routerNavigatedAction, (state) => ({
-      ...state,
-      initialState,
-    }))
+    on(routerNavigatedAction, () => initialState)
   ),
 });
 
@@ -40,4 +37,4 @@ export const {
   selectIsLoading,
   selectError,
   selectData: selectFeedData,
-} = authFeature;
+} = feedFeature;

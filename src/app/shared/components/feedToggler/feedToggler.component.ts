@@ -1,6 +1,6 @@
 import {CommonModule} from '@angular/common';
 import {Component, Input, OnInit} from '@angular/core';
-import {RouterLink} from '@angular/router';
+import {RouterLink, RouterLinkActive} from '@angular/router';
 import {Store} from '@ngrx/store';
 import {selectCurrentUser} from '../../../auth/store/reducers';
 
@@ -8,7 +8,7 @@ import {selectCurrentUser} from '../../../auth/store/reducers';
   selector: 'mc-feed-toggler',
   templateUrl: './feedToggler.component.html',
   standalone: true,
-  imports: [CommonModule, RouterLink],
+  imports: [CommonModule, RouterLink, RouterLinkActive],
 })
 export class FeedTogglerComponent implements OnInit {
   @Input() tagName?: string;
