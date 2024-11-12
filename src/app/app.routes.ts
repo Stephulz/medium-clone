@@ -5,7 +5,8 @@ import {yourFeedRoutes} from './yourFeed/yourFeed.routes';
 import {tagFeedRoutes} from './tagFeed/tagFeed.routes';
 import {articleRoutes} from './article/article.routes';
 import {createArticleRoutes} from './createArticle/createArticle.routes';
-import {editArticleRoutes} from './createArticle copy/editArticle.routes';
+import {editArticleRoutes} from './editArticle/editArticle.routes';
+import {settingsRoutes} from './createArticle copy/settings.routes';
 
 export const routes: Routes = [
   {
@@ -39,5 +40,9 @@ export const routes: Routes = [
   {
     path: 'articles/:slug/edit',
     loadChildren: () => editArticleRoutes,
+  },
+  {
+    path: 'settings',
+    loadChildren: () => settingsRoutes,
   },
 ];
