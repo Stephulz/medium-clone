@@ -6,7 +6,7 @@ import {tagFeedRoutes} from './tagFeed/tagFeed.routes';
 import {articleRoutes} from './article/article.routes';
 import {createArticleRoutes} from './createArticle/createArticle.routes';
 import {editArticleRoutes} from './editArticle/editArticle.routes';
-import {settingsRoutes} from './createArticle copy/settings.routes';
+import {settingsRoutes} from './settings/settings.routes';
 
 export const routes: Routes = [
   {

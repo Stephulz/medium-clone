@@ -106,7 +106,7 @@ export const getCurrrentUserEffect = createEffect(
         const token = persistenceService.get('accessToken');
 
         if (!token) {
-          return of(authActions.getCurrentUserFailure);
+          return of(authActions.getCurrentUserFailure());
         }
 
         return authService.getCurrentUser().pipe(
@@ -144,4 +144,21 @@ export const updateCurrrentUserEffect = createEffect(
     );
   },
   {functional: true}
+);
+
+export const logoutEffect = createEffect(
+  (
+    actions$ = inject(Actions),
+    router = inject(Router),
+    persistenceService = inject(PersistenceService)
+  ) => {
+    return actions$.pipe(
+      ofType(authActions.logout),
+      tap(() => {
+        persistenceService.set('accessToken', '');
+        router.navigateByUrl('/');
+      })
+    );
+  },
+  {functional: true, dispatch: false}
 );
