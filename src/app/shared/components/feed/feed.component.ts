@@ -17,6 +17,7 @@ import {selectError, selectFeedData, selectIsLoading} from './store/reducers';
 import {environment} from '../../../../environments/environment';
 import queryString from 'query-string';
 import {TagListComponent} from '../tagList/tagList.component';
+import {AddTofavoritesComponent} from '../addToFavorites/addToFavorites.component';
 
 @Component({
   selector: 'mc-feed',
@@ -29,6 +30,7 @@ import {TagListComponent} from '../tagList/tagList.component';
     LoadingComponent,
     PaginationComponent,
     TagListComponent,
+    AddTofavoritesComponent,
   ],
 })
 export class FeedComponent implements OnInit, OnChanges {

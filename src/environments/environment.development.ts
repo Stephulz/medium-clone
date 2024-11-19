@@ -1,4 +1,4 @@
 export const environment = {
   apiUrl: 'http://localhost:3000/api',
-  limit: 15,
+  limit: 5,
 };

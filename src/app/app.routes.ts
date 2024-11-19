@@ -7,6 +7,7 @@ import {articleRoutes} from './article/article.routes';
 import {createArticleRoutes} from './createArticle/createArticle.routes';
 import {editArticleRoutes} from './editArticle/editArticle.routes';
 import {settingsRoutes} from './settings/settings.routes';
+import {userProfileRoutes} from './userProfile/userProfile.routes';
 
 export const routes: Routes = [
   {
@@ -44,5 +45,13 @@ export const routes: Routes = [
   {
     path: 'settings',
     loadChildren: () => settingsRoutes,
+  },
+  {
+    path: 'profiles/:slug',
+    loadChildren: () => userProfileRoutes,
+  },
+  {
+    path: 'profiles/:slug/favorites',
+    loadChildren: () => userProfileRoutes,
   },
 ];
